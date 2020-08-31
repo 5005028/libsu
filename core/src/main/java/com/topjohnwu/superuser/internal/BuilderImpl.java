@@ -47,7 +47,7 @@ public class BuilderImpl extends Shell.Builder {
         // Root mount master
         if (!hasFlags(FLAG_NON_ROOT_SHELL) && hasFlags(FLAG_MOUNT_MASTER)) {
             try {
-                shell = build("dman xzsu", " --mount-master");
+                shell = build("magisk xzsu", " --mount-master");
                 if (shell.getStatus() != Shell.ROOT_MOUNT_MASTER)
                     shell = null;
             } catch (NoShellException ignore) {}
@@ -56,7 +56,7 @@ public class BuilderImpl extends Shell.Builder {
         // Normal root shell
         if (shell == null && !hasFlags(FLAG_NON_ROOT_SHELL)) {
             try {
-                shell = build("dman xzsu");
+                shell = build("magisk xzsu");
                 if (shell.getStatus() != ROOT_SHELL)
                     shell = null;
             } catch (NoShellException ignore) {}
